@@ -1,18 +1,18 @@
 // import cors from 'cors'
 // import express from 'express'
 
-// // const app = express()
-// // const port = 3002
+// const app = express()
+// const port = 3002
 
-// // app.use(cors())
-// // app.use(express.urlencoded({
-// //   extended: true,
-// // }))
-// // app.use(express.json())
+// app.use(cors())
+// app.use(express.urlencoded({
+//   extended: true,
+// }))
+// app.use(express.json())
 
-// // app.listen(port, () => {
-// //   console.log(`listening on ${port}`)
-// // })
+// app.listen(port, () => {
+//   console.log(`listening on ${port}`)
+// })
 
 const people = [
   {
@@ -181,10 +181,11 @@ function getFastestRoute(person) {
 
 // await getPlace(placeLocation)
 
-
-await getLocationsFunc()
-let placeLocation = getAverageLocation(people)
-await calculateRoutes(people, placeLocation)
-rateLocation(people) // todo give rating based on "factors"
-// todo iterate location based on rating
-console.dir(await getPlace(placeLocation, {depth:null}))
+function run() {
+  await getLocationsFunc()
+  let placeLocation = getAverageLocation(people)
+  await calculateRoutes(people, placeLocation)
+  rateLocation(people) // todo give rating based on "factors"
+  // todo iterate location based on rating
+  console.dir(await getPlace(placeLocation, {depth:null}))
+}
